@@ -483,7 +483,7 @@ class DynamicFixture(object):
             if field_name in self._DDF_CONFIGS:
                 continue
             if not model_has_the_field(model_class, field_name):
-                raise InvalidConfigurationError('Field "%s" does not exist.' % field_name)
+                raise InvalidConfigurationError('Field "%s" does not exist on model "%s"' % (field_name, model_class))
 
     def _configure_params(self, model_class, ddf_lesson, **kwargs):
         '''
